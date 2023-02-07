@@ -3,11 +3,16 @@ const os = require('os');
 
 const sentence = require('./practice2');
 
-fs.writeFile('./content/practice.txt', sentence, () => {
-  fs.writeFile(
+const practiceWrite = async () => {
+  await fs.writeFile('./content/practice.txt', sentence, () => {});
+  await fs.writeFile(
     './content/practice.txt',
     os.userInfo().username,
-    { flag: 'a' },
+    {
+      flag: 'a',
+    },
     () => {}
   );
-});
+};
+
+practiceWrite();
