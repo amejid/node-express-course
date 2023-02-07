@@ -1,6 +1,9 @@
 const express = require('express');
+const { consoleLog } = require('./practice-middleware');
 
 const app = express();
+
+app.use(consoleLog);
 
 app.use(express.static('./new-public'));
 
