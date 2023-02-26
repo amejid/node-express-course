@@ -1,18 +1,13 @@
-const fs = require('fs');
+const { writeFile } = require('fs/promises');
 const os = require('os');
 
 const sentence = require('./practice2');
 
 const practiceWrite = async () => {
-  await fs.writeFile('./content/practice.txt', sentence, () => {});
-  await fs.writeFile(
-    './content/practice.txt',
-    os.userInfo().username,
-    {
-      flag: 'a',
-    },
-    () => {}
-  );
+  await writeFile('./content/practice.txt', sentence);
+  await writeFile('./content/practice.txt', os.userInfo().username, {
+    flag: 'a',
+  });
 };
 
 practiceWrite();
