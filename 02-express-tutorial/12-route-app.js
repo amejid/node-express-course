@@ -13,5 +13,5 @@ app.use(express.json());
 app.use('/api/people', peopleRouter);
 app.use('/login', authRouter);
 
-const PORT = 5000;
-app.listen(PORT, () => console.log(`Server started on ${PORT}`));
+const port = 5000;
+app.listen(port, () => console.log(`Server started on ${port}`));
